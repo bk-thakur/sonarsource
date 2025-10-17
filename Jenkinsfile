@@ -1,10 +1,13 @@
 pipeline {
     agent any
 
+    tools {
+        jdk 'jdk17'   // Name must match the JDK configured in Jenkins Tools
+    }
+
     stages {
         stage('Checkout') {
             steps {
-                // Clones a sample repo with code
                 git 'https://github.com/SonarSource/sonar-scanning-examples.git'
             }
         }
